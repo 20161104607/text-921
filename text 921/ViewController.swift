@@ -11,16 +11,32 @@ import UIKit
 class ViewController: UIViewController {
     
 
-
-    @IBOutlet weak var rightbutton: UITextField!
+    @IBOutlet weak var display: UITextField!
     
-    
-    
-    @IBAction func button(_ sender: Any) {
-        
-        
-        rightbutton.text = "hello world"
+    @IBAction func zero(_ sender: Any) {
     }
+    @IBAction func one(_ sender: Any) {
+    }
+    @IBAction func two(_ sender: Any) {
+    }
+
+    @IBAction func three(_ sender: Any) {
+    }
+    
+    @IBAction func four(_ sender: Any) {
+    }
+    @IBAction func five(_ sender: Any) {
+    }
+    
+    @IBAction func six(_ sender: Any) {
+    }
+    @IBAction func seven(_ sender: Any) {
+    }
+    @IBAction func eight(_ sender: Any) {
+    }
+    @IBAction func nine(_ sender: Any) {
+    }
+
     
     
     
