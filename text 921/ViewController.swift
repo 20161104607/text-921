@@ -11,17 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var display: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var display1: UITextField!
+    @IBOutlet weak var display2: UITextField!
+
     var re = 0
     
     @IBAction func zero(_ sender: Any) {
@@ -119,14 +112,18 @@ class ViewController: UIViewController {
     
     @IBAction func multiply(_ sender: Any) {
         
+        
     }
     
     @IBAction func divided(_ sender: Any) {
     
     }
     
-    @IBAction func add(_ sender: Any) {
+    @IBAction func plus(_ sender: Any) {
+        
+        
     }
+    
     @IBAction func minus(_ sender: Any) {
     }
     
@@ -138,6 +135,8 @@ class ViewController: UIViewController {
         //judge = 1
     }
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
 }
-
