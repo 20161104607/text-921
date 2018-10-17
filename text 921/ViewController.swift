@@ -16,13 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var display2: UITextField!
 
     var re = 0
+    var judge = 0
+    var number = 0
+    var add = 0
+
     
     @IBAction func zero(_ sender: Any) {
         
         display.text="0"
     }
     @IBAction func one(_ sender: Any) {
-        if re == 1{
+        if re == 0{
             display.text = "1"
         }
         else{
@@ -110,33 +114,172 @@ class ViewController: UIViewController {
         display.text=""
     }
     
+    @IBAction func plus(_ sender: Any) {
+        if add == 1{
+            let a
+                = Double(display1.text!)!
+            let b = Double(display.text!)!
+            let c = a + b
+            display1.text = String(c)
+            display.text = ""
+            number = 1
+            re = 1
+        }else{
+            if display.text == ""{
+                display.text = "0"
+            }else {
+                let x = Double(display.text!)!
+                display1.text = String(x)
+                display.text = ""
+                number = 1
+                re = 0
+            }
+        }
+        
+        
+    }
+    
     @IBAction func multiply(_ sender: Any) {
+        if add == 1{
+            let a
+                = Double(display1.text!)!
+            let b = Double(display.text!)!
+            let c = a * b
+            display1.text = String(c)
+            display.text = ""
+            number = 3
+            re = 1
+        }else{
+            if display.text == ""{
+                display.text = "0"
+            }else {
+                let x = Double(display.text!)!
+                display1.text = String(x)
+                display.text = ""
+                number = 3
+                re = 0
+            }
+        }
         
         
     }
     
     @IBAction func divided(_ sender: Any) {
-    
-    }
-    
-    @IBAction func plus(_ sender: Any) {
+        if add == 1{
+            let a = Double(display1.text!)!
+            let b = Double(display.text!)!
+            let c = a / b
+            display1.text = String(c)
+            display.text = ""
+            number = 4
+            re = 1
+        }else{
+            if display.text == ""{
+                display.text = "0"
+            }else {
+                let x = Double(display.text!)!
+                display1.text = String(x)
+                display.text = ""
+                number = 4
+                re = 0
+                add = 1
+            }
+        }
         
-        
     }
+
+       
     
     @IBAction func minus(_ sender: Any) {
+        if add == 1{
+            let a
+                = Double(display1.text!)!
+            let b = Double(display.text!)!
+            let c = a - b
+            display1.text = String(c)
+            display.text = ""
+            number = 2
+            re = 1
+        }else{
+            if display.text == ""{
+                display.text = "0"
+            }else {
+                let x = Double(display.text!)!
+                display1.text = String(x)
+                display.text = ""
+                number = 2
+                re = 0
+            }
+        }
+        
+        
+    }
+    @IBAction func change(_ sender: Any) {
+        let count = Double(display.text!)!
+        
+        let count2 = -count
+        
+        display.text = String(count2)
+        
+        re = 0
+        
+
+    }
+    @IBAction func percent(_ sender: Any) {
+        let count = Double(display.text!)!
+        
+        let count2 = count * 0.01
+        
+        display.text = String(count2)
+        
+        re = 0
     }
     
     @IBAction func equal(_ sender: Any) {
-    }
-    @IBAction func point(_ sender: Any) {
+        
+        var d:Double
+        
+        var c:Double
+        
+        let x = Double(display1.text!)!
+        
+        c = (display.text! as NSString).doubleValue
+        
+        if number == 2{
+            
+         d = x - c
+            
+        }
+        else if number == 1{
+             d = x + c
+        }else if number == 3{
+            d = x * c
+        }else if number == 4{
+        d = x/(c)
+        }else{
+            d = 10000
+        }
+        display2.text = String(c)
+        if judge == 1{
+            display.text = String(format:"%f", d)}
+        else{
+             display.text = String(format:"%.0f", d)
+        }
+         re = 0
+        judge = 0
+        add = 0
+        }
+        
+    @IBAction func dot(_ sender: Any) {
         
         display.text = display.text! + "."
-        //judge = 1
+        judge = 1
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
 }
+        
+    
+    }
+
