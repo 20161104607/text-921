@@ -26,8 +26,9 @@ class ViewController: UIViewController {
         display.text="0"
     }
     @IBAction func one(_ sender: Any) {
-        if re == 0{
+        if re == 1{
             display.text = "1"
+            re = 0
         }
         else{
             display.text=display.text!+"1"
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
     @IBAction func two(_ sender: Any) {
         if re == 1{
             display.text = "2"
+            re = 0
         }
         else{
             display.text=display.text!+"2"
@@ -47,6 +49,7 @@ class ViewController: UIViewController {
     @IBAction func three(_ sender: Any) {
         if re == 1{
             display.text = "3"
+            re = 0
         }
         else{
             display.text=display.text!+"3"
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
     @IBAction func four(_ sender: Any) {
         if re == 1{
             display.text = "4"
+            re = 0
         }
         else{
             display.text=display.text!+"4"
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
     @IBAction func five(_ sender: Any) {
         if re == 1{
             display.text = "5"
+            re = 0
         }
         else{
             display.text=display.text!+"5"
@@ -76,6 +81,7 @@ class ViewController: UIViewController {
     @IBAction func six(_ sender: Any) {
         if re == 1{
             display.text = "6"
+            re = 0
         }
         else{
             display.text=display.text!+"6"
@@ -85,6 +91,7 @@ class ViewController: UIViewController {
     @IBAction func seven(_ sender: Any) {
         if re == 1{
             display.text = "7"
+            re = 0
         }
         else{
             display.text=display.text!+"7"
@@ -94,6 +101,7 @@ class ViewController: UIViewController {
     @IBAction func eight(_ sender: Any) {
         if re == 1{
             display.text = "8"
+            re = 0
         }
         else{
             display.text=display.text!+"8"
@@ -103,6 +111,7 @@ class ViewController: UIViewController {
     @IBAction func nine(_ sender: Any) {
         if re == 1{
             display.text = "9"
+            re = 0
         }
         else{
             display.text=display.text!+"9"
@@ -265,7 +274,7 @@ class ViewController: UIViewController {
         else{
              display.text = String(format:"%.0f", d)
         }
-         re = 0
+         re = 1
         judge = 0
         add = 0
         }
