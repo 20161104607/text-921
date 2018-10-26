@@ -125,6 +125,7 @@ class ViewController: UIViewController {
     
     @IBAction func plus(_ sender: Any) {
         if add == 1{
+            judge = 0
             let a
                 = Double(display1.text!)!
             let b = Double(display.text!)!
@@ -137,6 +138,7 @@ class ViewController: UIViewController {
             if display.text == ""{
                 display.text = "0"
             }else {
+                add = 1
                 let x = Double(display.text!)!
                 display1.text = String(x)
                 display.text = ""
