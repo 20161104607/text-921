@@ -121,13 +121,14 @@ class ViewController: UIViewController {
 
     @IBAction func dump(_ sender: Any) {
         display.text=""
+        display1.text=""
+        display2.text=""
     }
     
     @IBAction func plus(_ sender: Any) {
+        judge = 0
         if add == 1{
-            judge = 0
-            let a
-                = Double(display1.text!)!
+            let a = Double(display1.text!)!
             let b = Double(display.text!)!
             let c = a + b
             display1.text = String(c)
@@ -152,6 +153,7 @@ class ViewController: UIViewController {
     
     @IBAction func multiply(_ sender: Any) {
         if add == 1{
+            judge = 0
             let a
                 = Double(display1.text!)!
             let b = Double(display.text!)!
@@ -164,6 +166,7 @@ class ViewController: UIViewController {
             if display.text == ""{
                 display.text = "0"
             }else {
+                add = 1
                 let x = Double(display.text!)!
                 display1.text = String(x)
                 display.text = ""
@@ -177,22 +180,24 @@ class ViewController: UIViewController {
     
     @IBAction func divided(_ sender: Any) {
         if add == 1{
+            judge = 0
             let a = Double(display1.text!)!
             let b = Double(display.text!)!
             let c = a / b
             display1.text = String(c)
-            display.text = ""
+            display.text = String(c)
             number = 4
             re = 1
         }else{
             if display.text == ""{
                 display.text = "0"
             }else {
+                add = 1
                 let x = Double(display.text!)!
                 display1.text = String(x)
-                display.text = ""
+                display.text = String(x)
                 number = 4
-                re = 0
+                re = 1
                 add = 1
             }
         }
@@ -203,6 +208,7 @@ class ViewController: UIViewController {
     
     @IBAction func minus(_ sender: Any) {
         if add == 1{
+            judge = 0
             let a
                 = Double(display1.text!)!
             let b = Double(display.text!)!
@@ -215,6 +221,7 @@ class ViewController: UIViewController {
             if display.text == ""{
                 display.text = "0"
             }else {
+                add = 1
                 let x = Double(display.text!)!
                 display1.text = String(x)
                 display.text = ""
@@ -272,7 +279,7 @@ class ViewController: UIViewController {
         }
         display2.text = String(c)
         if judge == 1{
-            display.text = String(format:"%f", d)}
+            display.text = String(format:"%.0f", d)}
         else{
              display.text = String(format:"%.0f", d)
         }
@@ -285,6 +292,8 @@ class ViewController: UIViewController {
         
         display.text = display.text! + "."
         judge = 1
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
