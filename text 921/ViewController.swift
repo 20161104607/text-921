@@ -145,6 +145,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 1
                 re = 0
+                judge = 0
             }
         }
         
@@ -172,6 +173,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 3
                 re = 0
+                judge = 0
             }
         }
         
@@ -199,6 +201,7 @@ class ViewController: UIViewController {
                 number = 4
                 re = 1
                 add = 1
+                judge = 0
             }
         }
         
@@ -227,6 +230,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 2
                 re = 0
+                judge = 0
             }
         }
         
@@ -277,20 +281,37 @@ class ViewController: UIViewController {
         }else{
             d = 10000
         }
+        
+        
         display2.text = String(c)
         if judge == 1{
             display.text = String(format:"%.0f", d)}
         else{
-             display.text = String(format:"%.0f", d)
+             display.text = String(format:"%.5f", d)
         }
          re = 1
         judge = 0
         add = 0
+        var clear:String = display.text!
+        while clear.last == "0"{
+            clear.removeLast()
+        }
+        while clear.last == "."{
+            clear.removeLast()
+        }
+        display.text = clear
         }
         
-    @IBAction func dot(_ sender: Any) {
+    @IBAction func clear(_ sender: Any) {
         
+        
+        
+        
+    }
+    @IBAction func dot(_ sender: Any) {
+        if judge == 0{
         display.text = display.text! + "."
+        }
         judge = 1
         
         
