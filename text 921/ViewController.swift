@@ -289,10 +289,14 @@ class ViewController: UIViewController {
         else{
              display.text = String(format:"%.5f", d)
         }
+        
+        if c == 0 && number == 4{
+            display.text = " 错误"
+        }
          re = 1
         judge = 0
         add = 0
-        var clear:String = display.text!
+        var clear:String = display.text! 
         while clear.last == "0"{
             clear.removeLast()
         }
@@ -301,13 +305,8 @@ class ViewController: UIViewController {
         }
         display.text = clear
         }
-        
-    @IBAction func clear(_ sender: Any) {
-        
-        
-        
-        
-    }
+    
+
     @IBAction func dot(_ sender: Any) {
         if judge == 0{
         display.text = display.text! + "."
