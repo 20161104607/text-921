@@ -145,7 +145,7 @@ class ViewController: UIViewController {
                 display.text = ""
                 number = 1
                 re = 0
-                judge = 0
+                
             }
         }
         
@@ -265,7 +265,7 @@ class ViewController: UIViewController {
         
         let x = Double(display1.text!)!
         
-        c = (display.text! as NSString).doubleValue
+        c = Double(display.text!)!
         
         if number == 2{
             
@@ -274,29 +274,27 @@ class ViewController: UIViewController {
         }
         else if number == 1{
              d = x + c
-        }else if number == 3{
+        }
+        else if number == 3{
             d = x * c
-        }else if number == 4{
-        d = x/(c)
-        }else{
+        }
+        else if number == 4{
+            d = x/(c)
+        }
+        else{
             d = 10000
         }
         
         
         display2.text = String(c)
-        if judge == 1{
-            display.text = String(format:"%.0f", d)}
-        else{
-             display.text = String(format:"%.5f", d)
-        }
-        
+       
         if c == 0 && number == 4{
             display.text = " 错误"
         }
          re = 1
         judge = 0
         add = 0
-        var clear:String = display.text! 
+        var clear:String = String(format:"%.10f",d)
         while clear.last == "0"{
             clear.removeLast()
         }
@@ -304,7 +302,7 @@ class ViewController: UIViewController {
             clear.removeLast()
         }
         display.text = clear
-        }
+    }
     
 
     @IBAction func dot(_ sender: Any) {
