@@ -121,8 +121,9 @@ class ViewController: UIViewController {
 
     @IBAction func dump(_ sender: Any) {
         display.text=""
-        display1.text=""
-        display2.text=""
+        //display1.text=""
+        //display2.text=""
+        judge = 0
     }
     
     @IBAction func plus(_ sender: Any) {
@@ -197,7 +198,7 @@ class ViewController: UIViewController {
                 add = 1
                 let x = Double(display.text!)!
                 display1.text = String(x)
-                display.text = String(x)
+               // display.text = String(x)
                 number = 4
                 re = 1
                 add = 1
@@ -302,6 +303,7 @@ class ViewController: UIViewController {
             clear.removeLast()
         }
         display.text = clear
+        
     }
     
 
